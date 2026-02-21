@@ -9,11 +9,14 @@ import {
   MapPin, Phone, User, Store, Loader2 
 } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 export default function PesananMasukPage() {
   const supabase = createClient();
   const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+
 
   // 1. FETCH DATA REAL DARI DATABASE
   const fetchOrders = async () => {
