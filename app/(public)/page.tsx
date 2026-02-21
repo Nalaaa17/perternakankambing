@@ -15,6 +15,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+export const dynamic = 'force-dynamic';
+
 // --- DATA: Ditambahkan Full Hover Class agar tidak "Gaib" ---
 const reasons = [
   {

@@ -21,6 +21,8 @@ import {
   Loader2
 } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 export default function ProfilPage() {
   const supabase = createClient();
   const [activeTab, setActiveTab] = useState<'profil' | 'pesanan'>('profil');
