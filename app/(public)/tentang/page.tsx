@@ -76,13 +76,15 @@ export default function TentangPage() {
               </div>
             </div>
 
-            <div className="relative border-4 border-[#f8f7f3] h-[350px]">
-               <Image 
-                 src="/Foto/dg.jpg" 
-                 alt="Owner" 
-                 fill 
-                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700" 
-               />
+            <div className="relative border-4 border-[#f8f7f3] h-[450px] overflow-hidden group"> 
+              {/* Saya naikkan tingginya ke 450px agar lebih proporsional untuk portrait */}
+              <Image 
+                src="/Foto/bpk.jpeg" 
+                alt="Owner" 
+                fill 
+                // Tambahkan 'object-top' agar kepala tidak terpotong
+                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" 
+              />
             </div>
           </div>
         </div>
@@ -134,7 +136,7 @@ export default function TentangPage() {
               rel="noopener noreferrer"
               className="relative z-10 bg-[#02253d] text-[#f8f7f3] px-10 py-6 text-xl md:text-2xl font-black border-4 border-[#02253d] hover:bg-[#f8f7f3] hover:text-[#02253d] transition-all shadow-[8px_8px_0px_0px_rgba(248,247,243,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 uppercase flex items-center gap-4"
             >
-              Buka Google Maps Asli
+              Buka Google Maps 
             </a>
             
           </div>
