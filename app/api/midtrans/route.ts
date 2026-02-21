@@ -1,13 +1,16 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-// Menggunakan Kunci Master agar bisa mengubah database dari belakang layar
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+// KOSONGKAN BAGIAN LUAR SINI. Jangan taruh createClient di sini!
 
 export async function POST(request: Request) {
+  // PINDAHKAN KE DALAM SINI: 
+  // Supabase diinisialisasi hanya saat ada panggilan (Request) masuk
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+
   try {
     // 1. Terima laporan dari Midtrans
     const body = await request.json();
@@ -28,7 +31,7 @@ export async function POST(request: Request) {
     const { error } = await supabase
       .from('orders')
       .update({ payment_status: paymentStatus })
-      .eq('id', order_id); // Cocokkan dengan ID pesanan
+      .eq('id', order_id);
 
     if (error) {
       console.error("Gagal update Supabase:", error);
